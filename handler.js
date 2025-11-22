@@ -52,7 +52,6 @@ const handler = async function(sock, m) {
   const messageContent = m.message[messageType];
   if (!messageContent.caption && !messageContent.text) return;
 
-  const sender = m.key.remoteJid;
   const userId = m.key.participant || m.key.remoteJid;
 
   if (!database.users) database.users = {};

@@ -8,9 +8,16 @@ import makeWASocket, {
   makeCacheableSignalKeyStore,
 } from '@whiskeysockets/baileys';
 import pino from 'pino';
+import readline from 'readline';
 import handler from './handler.js';
 
 const logger = pino({ level: 'info' });
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+const question = (text) => new Promise((resolve) => rl.question(text, resolve));
 
 async function connectToWhatsApp() {
   const { state, saveCreds } = await useMultiFileAuthState('.auth_info_baileys');
@@ -23,10 +30,17 @@ async function connectToWhatsApp() {
       creds: state.creds,
       keys: makeCacheableSignalKeyStore(state.keys, logger),
     },
-    printQRInTerminal: true,
+    printQRInTerminal: !global.usePairingCode,
     logger,
     browser: ['Chrome (Linux)', '', ''],
   });
+
+  if (global.usePairingCode && !sock.authState.creds.registered) {
+    const phoneNumber = await question('Please enter your mobile phone number:\n');
+    const code = await sock.requestPairingCode(phoneNumber.trim());
+    console.log(`Your pairing code is: ${code}`);
+    rl.close();
+  }
 
   sock.ev.on('connection.update', (update) => {
     const { connection, lastDisconnect } = update;
