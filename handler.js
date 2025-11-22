@@ -1,10 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const { readdirSync } = fs;
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath, pathToFileURL } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 let database = {};
 try {
-  database = JSON.parse(fs.readFileSync('./database.json', 'utf8'));
+  const data = fs.readFileSync('./database.json', 'utf8');
+  database = JSON.parse(data);
 } catch (e) {
   console.error('Failed to load database, starting with a new one.', e);
   database = {};
@@ -16,21 +20,25 @@ function saveDatabase() {
 
 const plugins = {};
 const pluginsDir = path.join(__dirname, 'plugins');
-
-const pluginFiles = readdirSync(pluginsDir).filter(file => file.endsWith('.js'));
+const pluginFiles = fs.readdirSync(pluginsDir).filter(file => file.endsWith('.js'));
 
 for (const file of pluginFiles) {
   try {
-    const plugin = require(path.join(pluginsDir, file));
-    if (plugin.command) {
-      plugins[plugin.command] = plugin;
+    const filePath = path.join(pluginsDir, file);
+    const fileUrl = pathToFileURL(filePath).href;
+    const module = await import(fileUrl);
+    const plugin = module.default;
+    if (plugin && Array.isArray(plugin.command)) {
+      plugin.command.forEach(cmd => {
+        plugins[cmd.toLowerCase()] = plugin;
+      });
     }
   } catch (e) {
     console.error(`Error loading plugin ${file}:`, e);
   }
 }
 
-module.exports = async function(sock, m) {
+const handler = async function(sock, m) {
   if (!m.message) return;
   const messageType = Object.keys(m.message)[0];
   const messageContent = m.message[messageType];
@@ -57,11 +65,11 @@ module.exports = async function(sock, m) {
   if (!isCmd) return;
 
   const [command, ...args] = text.slice(prefix.length).trim().split(/ +/);
-  const requestedPlugin = Object.values(plugins).find(p => p.command === command.toLowerCase());
+  const requestedPlugin = plugins[command.toLowerCase()];
 
   if (requestedPlugin) {
     try {
-      await requestedPlugin.run(sock, m, { command, args, text, db: database });
+      await requestedPlugin(sock, m, { command, args, text, db: database });
       saveDatabase();
     } catch (e) {
       console.error(`Error executing plugin ${command}:`, e);
@@ -69,3 +77,5 @@ module.exports = async function(sock, m) {
     }
   }
 };
+
+export default handler;
