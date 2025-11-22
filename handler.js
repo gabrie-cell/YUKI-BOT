@@ -26,19 +26,23 @@ function saveDatabase() {
   fs.writeFileSync('./database.json', JSON.stringify(database, null, 2));
 }
 
+const plugins = {};
+const commands = {};
+
 const pluginsDir = path.join(__dirname, 'plugins');
 const pluginFiles = fs.readdirSync(pluginsDir).filter(file => file.endsWith('.js'));
 
-const plugins = {};
 for (const file of pluginFiles) {
   try {
     const filePath = path.join(pluginsDir, file);
     const fileUrl = pathToFileURL(filePath).href;
     const module = await import(fileUrl);
     const plugin = module.default;
+
     if (plugin && Array.isArray(plugin.command)) {
+      plugins[file] = plugin;
       plugin.command.forEach(cmd => {
-        plugins[cmd.toLowerCase()] = plugin;
+        commands[cmd.toLowerCase()] = plugin;
       });
     }
   } catch (e) {
@@ -72,11 +76,11 @@ const handler = async function(sock, m) {
   if (!isCmd) return;
 
   const [command, ...args] = text.slice(prefix.length).trim().split(/ +/);
-  const requestedPlugin = Object.values(plugins).find(plugin => plugin.command && plugin.command.includes(command.toLowerCase()));
+  const requestedPlugin = commands[command.toLowerCase()];
 
   if (requestedPlugin) {
     try {
-      await requestedPlugin(sock, m, { command, args, text, db: database });
+      await requestedPlugin(sock, m, { command, args, text, db: database, plugins });
       saveDatabase();
     } catch (e) {
       console.error(`Error executing plugin ${command}:`, e);

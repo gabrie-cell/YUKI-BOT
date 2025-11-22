@@ -23,7 +23,6 @@ global.author = 'Billie-BOT'
 
 global.multiplier = 69
 global.maxwarn = '3'
-global.usePairingCode = true
 
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
