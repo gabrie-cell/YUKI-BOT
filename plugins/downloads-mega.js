@@ -3,7 +3,7 @@ import { File } from "megajs"
 
 const handler = async (m, { conn, args, usedPrefix, command, text }) => {
 if (!text) {
-return conn.reply(m.chat, `❀ Por favor, envia un link de MEGA para descargar el archivo.`, m)
+return conn.reply(m.chat, `✳️ Por favor, envia un link de MEGA para descargar el archivo.`, m)
 }
 try {
 await m.react('🕒')
@@ -11,13 +11,13 @@ const file = File.fromURL(text)
 await file.loadAttributes()
 let maxSize = 300 * 1024 * 1024;
 if (file.size >= maxSize) {
-return conn.reply(m.chat, `ꕥ El archivo es demasiado pesado (Peso máximo: 300MB).`, m)
+return conn.reply(m.chat, `✨ El archivo es demasiado pesado (Peso máximo: 300MB).`, m)
 }
-let cap = `*乂 ¡MEGA - DOWNLOADER! 乂*
+let cap = `*MEGA - DOWNLOADER*
 
-≡ Nombre : ${file.name}
-≡ Tamaño : ${formatBytes(file.size)}
-≡ URL: ${text}`
+*Nombre:* ${file.name}
+*Tamaño:* ${formatBytes(file.size)}
+*URL:* ${text}`
 m.reply(cap)
 const data = await file.downloadBuffer()
 const fileExtension = path.extname(file.name).toLowerCase()
