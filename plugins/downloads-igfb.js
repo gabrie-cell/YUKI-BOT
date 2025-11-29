@@ -1,6 +1,6 @@
 const handler = async (m, { args, conn, usedPrefix, command }) => {
 try {
-if (!args[0]) return conn.reply(m.chat, `Por favor, ingresa un enlace de Instagram o Facebook.`, m)
+if (!args[0]) return conn.reply(m.chat, `❀ Por favor, ingresa un enlace de *Instagram* o *Facebook*.`, m)
 let data = []
 const url = encodeURIComponent(args[0])
 await m.react('🕒')
@@ -40,13 +40,13 @@ if (json.status && json.data?.length) {
 data = json.data.map(v => v.url)
 }} catch (e) {}
 }
-if (!data.length) return conn.reply(m.chat, `No se pudo obtener el contenido.`, m)
+if (!data.length) return conn.reply(m.chat, `ꕥ No se pudo obtener el contenido.`, m)
 for (let media of data) {
-await conn.sendFile(m.chat, media, 'media.mp4', `Aquí tienes.`, m)
+await conn.sendFile(m.chat, media, 'media.mp4', `❀ Aquí tienes ฅ^•ﻌ•^ฅ.`, m)
 await m.react('✔️')
 }} catch (error) {
 await m.react('✖️')
-await m.reply(`Se ha producido un problema. Usa *${usedPrefix}report* para informarlo.`)
+await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`)
 }}
 
 handler.command = ['instagram', 'ig', 'facebook', 'fb']

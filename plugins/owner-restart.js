@@ -13,7 +13,7 @@ process.exit(0)
 } catch (error) {
 await m.react('✖️')
 console.log(error)
-conn.reply(m.chat, `⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`, m)
 }}
 
 handler.help = ['restart']

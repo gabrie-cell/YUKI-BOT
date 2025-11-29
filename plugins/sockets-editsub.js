@@ -33,7 +33,7 @@ await conn.updateProfileName(value)
 m.reply(`❀ Se cambió el nombre de usuario a *${value}* correctamente.`)
 break
 }}} catch (error) {
-m.reply(`⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${error.message}
+m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`)
 }}
 
 handler.help = ['setpfp', 'setimage', 'setstatus', 'setbio', 'setusername', 'setuser']

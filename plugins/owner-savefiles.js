@@ -50,7 +50,7 @@ await m.react('✔️')
 break
 }}} catch (e) {
 await m.react('✖️')
-conn.reply(m.chat, `⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa ${usedPrefix}report para informarlo.\n\n${e.message}`, m)
 }}
 
 handler.help = ['saveplugin', 'savefile', 'deletefile', 'getplugin']

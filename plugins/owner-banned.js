@@ -96,7 +96,7 @@ conn.reply(m.chat, listText, m, { mentions: blocklist })
 break
 }}} catch (e) {
 await m.react('✖️')
-return m.reply(`⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+return m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n` + (e.message || e))
 }}
 
 handler.help = ['banned', 'unban', 'block', 'unblock', 'banlist', 'blocklist']

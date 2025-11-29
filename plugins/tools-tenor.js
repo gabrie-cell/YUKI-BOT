@@ -42,7 +42,7 @@ await sendAlbumMessage(m.chat, medias, { caption: `❀ G I F - S E A R C H ❀\n
 await m.react('✔️')
 } catch (e) {
 await m.react('✖️')
-m.reply(`⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`)
 }}
 
 handler.help = ['tenor']

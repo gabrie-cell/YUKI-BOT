@@ -56,7 +56,7 @@ ${description}
 ❒ Comandos totales » *${user.commands || 0}*`
 await conn.sendMessage(m.chat, { image: { url: pp }, caption: text, mentions: [userId] }, { quoted: fkontak })
 } catch (error) {
-await m.reply(`⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`, m)
 }}
 
 handler.help = ['profile']

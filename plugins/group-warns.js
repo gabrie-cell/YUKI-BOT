@@ -46,7 +46,7 @@ const listadvs = `❀ Usuarios Advertidos\n\n*Total : ${adv.length} Usuarios*${a
 await conn.sendMessage(m.chat, { image: { url: pp }, caption: listadvs, mentions: await conn.parseMention(listadvs) }, { quoted: m })
 break
 }}} catch (error) {
-m.reply(`⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`)
 }}
 
 handler.command = ['advertencia', 'warn', 'addwarn', 'delwarn', 'unwarn', 'listadv', 'advlist']

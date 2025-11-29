@@ -88,7 +88,7 @@ user.description = ''
 return conn.reply(m.chat, `❀ Tu descripción ha sido eliminada.`, m)
 break
 }}} catch (error) {
-m.reply(`⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`)
 }}
 
 handler.help = ['setprofile', 'setbirth', 'delbirth', 'setgenre', 'setgenero', 'delgenre', 'setdescription', 'setdesc', 'deldescription', 'deldesc']

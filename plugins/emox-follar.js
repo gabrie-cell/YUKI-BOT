@@ -6,7 +6,7 @@ import path from 'path';
 let handler = async (m, { conn, usedPrefix }) => {
     let who;
 if (!db.data.chats[m.chat].nsfw && m.isGroup) {
-    return m.reply('Los NSFW estan apagados. Usa .nsfw on si eres admin y quieres activarlos.');
+    return m.reply('*[⚤︎] 𝖫𝗈𝗌 𝖭𝗌𝖿𝗐 𝖾𝗌𝗍𝖺𝗇 𝖺𝗉𝖺𝗀𝖺𝖽𝗈𝗌 \𝗇\𝗇> 𝖴𝗌𝖺 .𝗇𝗌𝖿𝗐 𝗈𝗇 𝗌𝗂 𝖾𝗋𝖾𝗌 𝖺𝖽𝗆𝗂𝗇 𝗒 𝗊𝗎𝗂𝖾𝗋𝖾𝗌 𝖺𝖼𝗍𝗂𝗏𝖺𝗋𝗅𝗈𝗌.*');
     }
     if (m.mentionedJid.length > 0) {
         who = m.mentionedJid[0];
@@ -22,11 +22,11 @@ if (!db.data.chats[m.chat].nsfw && m.isGroup) {
 
     let str;
     if (m.mentionedJid.length > 0) {
-        str = `\`${name2}\` le da duro a \`${name || who}\`.`;
+        str = `\`${name2}\` *follo fuertemente a la perra de* \`${name || who}\`.`;
     } else if (m.quoted) {
-        str = `\`${name2}\` se lo hace a \`${name || who}\`.`;
+        str = `\`${name2}\` *se la metió durísimo a la perrita de* \`${name || who}\`.`;
     } else {
-        str = `\`${name2}\` está en acción.`.trim();
+        str = `\`${name2}\` *está follando ricamente.*`.trim();
     }
     
     if (m.isGroup) {

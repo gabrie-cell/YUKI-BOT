@@ -29,7 +29,7 @@ return m.reply(`⚠︎ Ocurrió un error.`, m)
 break
 }
 }} catch (e) {
-m.reply(`⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`)
 }}
 
 handler.command = ['kicknum', 'listnum', 'listanum']

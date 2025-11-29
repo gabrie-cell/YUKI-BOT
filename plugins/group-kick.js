@@ -11,7 +11,7 @@ if (user === ownerGroup) return conn.reply(m.chat, `ꕥ No puedo eliminar al pro
 if (user === ownerBot) return conn.reply(m.chat, `ꕥ No puedo eliminar al propietario del bot.`, m)
 await conn.groupParticipantsUpdate(m.chat, [user], 'remove')
 } catch (e) {
-conn.reply(m.chat, `⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`, m)
 }}
 
 handler.help = ['kick']

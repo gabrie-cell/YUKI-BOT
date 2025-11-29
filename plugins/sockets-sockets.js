@@ -80,7 +80,7 @@ conn.reply(m.chat, '✿ La sesión fue recargada correctamente.', m)
 break
 }}} catch (error) {
 await m.react('✖️')
-conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${error.message}
+conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message || error}`, m)
 }}
 
 handler.command = ['self', 'public', 'join', 'salir', 'leave', 'logout', 'reload']

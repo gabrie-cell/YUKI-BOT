@@ -23,7 +23,7 @@ await conn.reply(m.chat, response, m)
 await m.react('✔️')
 } catch (err) {
 await m.react('✖️') 
-await conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+await conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${err.message}`, m)
 }}
 
 handler.command = ['syntax', 'detectar', 'errores']

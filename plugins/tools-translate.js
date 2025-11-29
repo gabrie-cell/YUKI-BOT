@@ -23,7 +23,7 @@ await conn.reply(m.chat, result.text, m)
 await m.react('✔️')
 } catch (error) {
 await m.react('✖️')
-await m.reply(`⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`, m)
 try {
 await m.react('🕒')
 conn.reply(m.chat, wait, m)
@@ -34,7 +34,7 @@ await conn.reply(m.chat, result2, m)
 await m.react('✔️')
 } catch (error) {
 await m.react('✖️')
-await m.reply(`⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`, m)
 }}}
 
 handler.help = ['translate']

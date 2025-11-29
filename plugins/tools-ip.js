@@ -30,7 +30,7 @@ conn.reply(m.chat, ipsearch, m)
 await m.react('✔️')
 } catch (error) {
 await m.react('✖️')
-conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`, m)
 }}
 
 handler.help = ['ip <alamat ip>']

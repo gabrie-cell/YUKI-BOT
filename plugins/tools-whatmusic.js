@@ -39,7 +39,7 @@ sourceUrl: redes
 await m.react('✔️')
 } catch (error) {
 await m.react('✖️')
-m.reply(`⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n` + error.message)
 }}
 
 handler.help = ["whatmusic"]

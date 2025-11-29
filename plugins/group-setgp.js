@@ -32,7 +32,7 @@ m.reply('❀ Se cambió el nombre del grupo correctamente.')
 break
 }}} catch (e) {
 await m.react('✖️')
-m.reply(`⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+m.reply(`⚠︎ Se ha producido un problema.\n> El detalle del error se mostrará a continuación. Usa ${usedPrefix}report para informarlo.\n\n${e.message}`)
 }}
 
 handler.help = ['gpbanner', 'groupimg', 'gpdesc', 'groupdesc', 'gpname', 'groupname']

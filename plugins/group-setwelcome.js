@@ -36,7 +36,7 @@ await conn.sendMessage(m.chat, { image: { url: ppBye }, caption: captionBye, men
 try { fs.unlinkSync(ppBye) } catch {}
 break
 }}} catch (e) {
-m.reply(`⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+m.reply(`⚠︎ Se ha producido un problema.\n> El detalle del error se mostrará a continuación. Usa ${usedPrefix}report para informarlo.\n\n${e.message}`)
 }}
 
 handler.help = ['setwelcome', 'setbye', 'testwelcome', 'testbye']

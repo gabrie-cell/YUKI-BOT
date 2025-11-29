@@ -46,7 +46,7 @@ conn.reply(m.chat, `❀ Listo, se eliminaron ${totalDeleted} archivos de las car
 break
 }}} catch (err) {
 await m.react('✖️')
-await conn.reply(m.chat, `⚠︎ Se ha producido un problema\n> Usa \*${usedPrefix}report\* para informarlo\n\n${error.message}
+await conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${err.message}`, m)
 }}
 
 handler.help = ['delai', 'dsowner', 'cleartmp', 'vaciartmp']

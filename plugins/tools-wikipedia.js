@@ -16,7 +16,7 @@ await m.reply(`▢ *Wikipedia*\n\n‣ Buscado : ${wik}\n\n${resulw}`)
 await m.react('✔️')
 } catch (e) {
 await m.react('✖️')
-await m.reply(`⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+await m.reply(`⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`, m)
 }}
 
 handler.help = ['wikipedia']

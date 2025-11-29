@@ -97,7 +97,7 @@ await m.react('✔️')
 break
 }}} catch (e) {
 await m.react('✖️')
-conn.sendMessage(m.chat, { text: `⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+conn.sendMessage(m.chat, { text: `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}` }, { quoted: m })
 }}
 
 handler.tags = ['sticker']

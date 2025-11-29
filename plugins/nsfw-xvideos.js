@@ -4,10 +4,10 @@ import cheerio from 'cheerio'
 
 const handler = async (m, { text, conn, args, usedPrefix }) => {
 if (!db.data.chats[m.chat].nsfw && m.isGroup) {
-return m.reply(`El contenido NSFW está desactivado en este grupo.\n\nUn administrador puede activarlo con el comando:\n» *${usedPrefix}nsfw on*`)
+return m.reply(`ꕥ El contenido *NSFW* está desactivado en este grupo.\n\nUn *administrador* puede activarlo con el comando:\n» *${usedPrefix}nsfw on*`)
 }
 if (!text) {
-return m.reply('Por favor, ingresa el título o URL del video de (xvideos).')
+return m.reply('❀ Por favor, ingresa el título o URL del video de *(xvideos)*.')
 }
 conn.xvideos = conn.xvideos || {}
 const isUrl = text.includes('xvideos.com')
@@ -16,34 +16,34 @@ try {
 await m.react('🕒')
 const res = await xvideosdl(args[0])
 const { duration, quality, views, likes, deslikes } = res.result
-const txt = `*XVIDEOS - DOWNLOAD*
+const txt = `*乂 ¡XVIDEOS - DOWNLOAD! 乂*
 
-Título: ${res.result.title}
-Duración: ${duration || 'Desconocida'}
-Likes: ${likes || 'Desconocida'}
-Des-Likes: ${deslikes}
-Vistas: ${views || 'Desconocidas'}`
+≡ Título : ${res.result.title}
+≡ Duración : ${duration || 'Desconocida'}
+≡ Likes : ${likes || 'Desconocida'}
+≡ Des-Likes : ${deslikes}
+≡ Vistas : ${views || 'Desconocidas'}`
 const dll = res.result.url
 await conn.sendFile(m.chat, dll, res.result.title + '.mp4', txt, m)
 await m.react('✔️')
 } catch (e) {
 await m.react('✖️')
-await conn.reply(m.chat, `Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${error.message}
+await conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n` + e, m)
 }
 return
 }
 const res = await search(text)
 await m.react('🕒')
 if (!res.length) {
-return m.reply('No se encontraron resultados.')
+return m.reply('ꕥ No se encontraron resultados.')
 }
 await m.react('✔️')
-const list = res.slice(0, 10).map((v, i) => `*${i + 1}*\nTítulo: *${v.title}*\nLink: ${v.url}`).join('\n\n')
-const caption = `*XVIDEOS - SEARCH*
+const list = res.slice(0, 10).map((v, i) => `*${i + 1}*\n≡ Título : *${v.title}*\n≡ Link : ${v.url}`).join('\n\n')
+const caption = `*乂 ¡XVIDEOS - SEARCH! 乂*
 
 ${list}
 
-> Responde con el número + n para descargar uno de los siguientes vídeos o bien, usa directamente la URL.`
+> » Responde con el número + n para descargar uno de los siguientes vídeos o bien, usa directamente la URL.`
 const { key } = await conn.sendMessage(m.chat, { text: caption }, { quoted: m })
 conn.xvideos[m.sender] = {
 result: res,
@@ -51,13 +51,13 @@ key,
 downloads: 0,
 timeout: setTimeout(() => delete conn.xvideos[m.sender], 120_000),
 }}
-handler.before = async (m, { conn, usedPrefix }) => {
+handler.before = async (m, { conn }) => {
 conn.xvideos = conn.xvideos || {}
 const session = conn.xvideos[m.sender]
 if (!session || !m.quoted || m.quoted.id !== session.key.id) return
 const n = parseInt(m.text.trim())
 if (isNaN(n) || n < 1 || n > session.result.length) {
-await m.reply('Por favor, ingresa un número válido.')
+await m.reply('ꕥ Por favor, ingresa un número válido.')
 return
 }
 try {
@@ -65,19 +65,19 @@ await m.react('🕒')
 const link = session.result[n - 1].url
 const res = await xvideosdl(link)
 const { duration, quality, views, likes, deslikes } = res.result
-const txt = `*XVIDEOS - DOWNLOAD*
+const txt = `*乂 ¡XVIDEOS - DOWNLOAD! 乂*
 
-Título: ${res.result.title}
-Duración: ${duration || 'Desconocida'}
-Likes: ${likes || 'Desconocida'}
-Des-Likes: ${deslikes}
-Vistas: ${views || 'Desconocidas'}`
+≡ Título : ${res.result.title}
+≡ Duración : ${duration || 'Desconocida'}
+≡ Likes : ${likes || 'Desconocida'}
+≡ Des-Likes : ${deslikes}
+≡Vistas : ${views || 'Desconocidas'}`
 const dll = res.result.url
 await conn.sendFile(m.chat, dll, res.result.title + '.mp4', txt, m)
 await m.react('✔️')
 } catch (e) {
 await m.react('✖️')
-await conn.reply(m.chat, `Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${error.message}
+await conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n` + e, m)
 } finally {
 session.downloads++
 if (session.downloads >= 5) {

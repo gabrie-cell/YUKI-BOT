@@ -23,8 +23,8 @@ const exps = horas * 30
 user.coin += coins
 user.exp += exps
 const tiempo = formatTiempo(ms)
-const recompensa = coins > 0? `\nRecompensa: *${coins} ${currency}*` : ''
-await conn.reply(m.chat,`${await conn.getName(m.sender)} dejaste de estar inactivo.\nMotivo: *${user.afkReason || 'sin especificar'}*\nTiempo inactivo: *${tiempo}* ${recompensa}`, m)
+const recompensa = coins > 0? `\n○ Recompensa » *${coins} ${currency}*` : ''
+await conn.reply(m.chat,`❀ ${await conn.getName(m.sender)} Dejaste de estar inactivo.\n○ Motivo » *${user.afkReason || 'sin especificar'}*\n○ Tiempo inactivo » *${tiempo}* ${recompensa}`, m)
 user.afk = -1
 user.afkReason = ''
 }
@@ -35,7 +35,7 @@ const target = global.db.data.users[jid]
 if (!target || typeof target.afk !== 'number' || target.afk < 0) continue
 const ms = Date.now() - target.afk
 const tiempo = formatTiempo(ms)
-await conn.reply(m.chat, `El usuario ${await conn.getName(jid)} está AFK.\nMotivo: ${target.afkReason || 'sin especificar'}\nTiempo inactivo: ${tiempo}`, m)
+await conn.reply(m.chat, `ꕥ El usuario ${await conn.getName(jid)} está AFK.\n○ Motivo: ${target.afkReason || 'sin especificar'}\n○ Tiempo inactivo: ${tiempo}`, m)
 }
 return true
 }

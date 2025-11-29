@@ -1,6 +1,6 @@
 let handler = async (m, { conn, command, usedPrefix }) => {
 if (!global.db.data.chats[m.chat].economy && m.isGroup) {
-return m.reply(`Los comandos de Economía están desactivados en este grupo.\n\nUn administrador puede activarlos con el comando:\n» *${usedPrefix}economy on*`)
+return m.reply(`《✦》Los comandos de *Economía* están desactivados en este grupo.\n\nUn *administrador* puede activarlos con el comando:\n» *${usedPrefix}economy on*`)
 }
 let user = global.db.data.users[m.sender]
 if (!user) global.db.data.users[m.sender] = user = { coin: 0, exp: 0, health: 100, lastAdventure: 0 }
@@ -9,13 +9,13 @@ if (user.exp == null) user.exp = 0
 if (user.health == null) user.health = 100
 if (user.lastAdventure == null) user.lastAdventure = 0
 if (user.health < 5)
-return conn.reply(m.chat, `No tienes suficiente salud para volver a aventurarte.\n> Usa *"${usedPrefix}heal"* para curarte.`, m)
+return conn.reply(m.chat, `ꕥ No tienes suficiente salud para volver a *aventurarte*.\n> Usa *"${usedPrefix}heal"* para curarte.`, m)
 const cooldown = 20 * 60 * 1000
 const now = Date.now()
 if (now < user.lastAdventure) {
 const restante = user.lastAdventure - now
 const wait = formatTime(restante)
-return conn.reply(m.chat, `Debes esperar *${wait}* para usar *${usedPrefix + command}* de nuevo.`, m)
+return conn.reply(m.chat, `ꕥ Debes esperar *${wait}* para usar *${usedPrefix + command}* de nuevo.`, m)
 }
 user.lastAdventure = now + cooldown
 const evento = pickRandom(aventuras)
@@ -41,7 +41,7 @@ experiencia = Math.floor(Math.random() * 61) + 30
 user.exp += experiencia
 }
 if (user.health < 0) user.health = 0
-const resultado = `${evento.mensaje} ${evento.tipo === 'neutro' ? '' : evento.tipo === 'victoria' ? `ganaste. *${monedas.toLocaleString()} ${currency}*` : `perdiste. *${monedas.toLocaleString()} ${currency}*`}`
+const resultado = `❀ ${evento.mensaje} ${evento.tipo === 'neutro' ? '' : evento.tipo === 'victoria' ? `ganaste. *¥${monedas.toLocaleString()} ${currency}*` : `perdiste. *¥${monedas.toLocaleString()} ${currency}*`}`
 await conn.reply(m.chat, resultado, m)
 await global.db.write()
 }

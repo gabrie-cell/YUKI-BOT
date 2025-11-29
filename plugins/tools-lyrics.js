@@ -53,7 +53,7 @@ await conn.sendMessage(m.chat, { text: caption, mentions: [m.sender] }, { quoted
 await m.react('✔️')
 } catch (error) {
 await m.react('✖️')
-return conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa \*${usedPrefix}report\* para informarlo.\n\n${e.message}
+return conn.reply(m.chat, `⚠︎ Se ha producido un problema\n> Usa *${usedPrefix}report* para informarlo\n\n${error.message}`, m)
 }}
 
 handler.command = ['lyrics']
