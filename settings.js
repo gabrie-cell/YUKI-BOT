@@ -31,8 +31,8 @@ global.dev = "© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ᴀʙʀᴀʜᴀɴ-ᴍ 𒆜"
 global.author = "© mᥲძᥱ ᥕі𝗍һ ᑲᥡ ᴀʙʀᴀʜᴀɴ-ᴍ 𒆜"
 global.etiqueta = "ᴀʙʀᴀʜᴀɴ-ᴍ"
 global.currency = "¥enes"
-global.banner = "https://qu.ax/GoebB.jpg"
-global.icono = "https://qu.ax/GoebB.jpg"
+global.banner = "https://files.catbox.moe/wak7xr.jpg"
+global.icono = "https://files.catbox.moe/boq8yt.jpg"
 global.catalogo = fs.readFileSync('./lib/catalogo.jpg')
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
