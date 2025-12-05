@@ -3,7 +3,7 @@ import baileys from '@whiskeysockets/baileys'
 import cheerio from 'cheerio'
 
 let handler = async (m, { conn, text, args, usedPrefix }) => {
-if (!text) return m.reply(`✳️ ¿Qué buscas?`)
+if (!text) return m.reply(`ingresa lo que deseas buscar por Pinterest.`)
 try {
 await m.react('🕒')
 if (text.includes("https://")) {
@@ -13,15 +13,15 @@ await conn.sendMessage(m.chat, { [isVideo ? "video" : "image"]: { url: i.downloa
 } else {
 const results = await pins(text)
 if (!results.length) {
-return conn.reply(m.chat, `✨ No se encontraron resultados para "${text}".`, m)
+return conn.reply(m.chat, `No se encontraron resultados para "${text}".`, m)
 }
 const medias = results.slice(0, 10).map(img => ({ type: 'image', data: { url: img.image_large_url } }))
 await conn.sendSylphy(m.chat, medias, {
-caption: `*Pinterest - Search*\n\n*Búsqueda:* "${text}"\n*Resultados:* ${medias.length}`, quoted: m })
+caption: `❀ Pinterest - Search ❀\n\n✧ Búsqueda » "${text}"\n✐ Resultados » ${medias.length}`, quoted: m })
 await m.react('✔️')
 }} catch (e) {
 await m.react('✖️')
-conn.reply(m.chat, `Error: Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n` + e, m)
+conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n` + e, m)
 }}
 
 handler.help = ['pinterest']
