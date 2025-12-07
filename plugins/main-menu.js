@@ -1,10 +1,28 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 
-let handler = async (m, { conn, args }) => {
-let mentionedJid = await m.mentionedJid
-let userId = mentionedJid && mentionedJid[0] ? mentionedJid[0] : m.sender
-let totalreg = Object.keys(global.db.data.users).length
-let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
+let bannerBuffer = null;
+let totalCommands = 0;
+
+const handler = async (m, { conn, args }) => {
+  let mentionedJid = await m.mentionedJid;
+  let userId = mentionedJid && mentionedJid[0] ? mentionedJid[0] : m.sender;
+  let totalreg = Object.keys(global.db.data.users).length;
+
+  if (totalCommands === 0) {
+    totalCommands = global.commandMap.size || Object.values(global.plugins).filter(p => p.help && p.tags).length;
+  }
+
+  if (bannerBuffer === null) {
+    try {
+      const response = await fetch(banner);
+      if (response.ok) {
+        bannerBuffer = await response.buffer();
+      }
+    } catch (e) {
+      console.error("Failed to fetch and cache the banner:", e);
+      bannerBuffer = Buffer.from('');
+    }
+  }
 
 let txt = `
 ✦━━━━━━༺♡༻━━━━━━✦
@@ -256,33 +274,35 @@ let txt = `
 ✦ #xnxx <link>
 
 > BY ABRAHAN-M
-`.trim()
+`.trim();
 
-await conn.sendMessage(m.chat, {
-text: txt,
-contextInfo: {
-mentionedJid: [userId],
-isForwarded: true,
-forwardedNewsletterMessageInfo: {
-newsletterJid: channelRD.id,
-serverMessageId: '',
-newsletterName: channelRD.name
-},
-externalAdReply: {
-title: botname,
-body: textbot,
-mediaType: 1,
-mediaUrl: redes,
-sourceUrl: redes,
-thumbnail: await (await fetch(banner)).buffer(),
-showAdAttribution: false,
-containsAutoReply: true,
-renderLargerThumbnail: true
-}}}, { quoted: m })
-}
+  await conn.sendMessage(m.chat, {
+    text: txt,
+    contextInfo: {
+      mentionedJid: [userId],
+      isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+        newsletterJid: channelRD.id,
+        serverMessageId: '',
+        newsletterName: channelRD.name
+      },
+      externalAdReply: {
+        title: botname,
+        body: textbot,
+        mediaType: 1,
+        mediaUrl: redes,
+        sourceUrl: redes,
+        thumbnail: bannerBuffer,
+        showAdAttribution: false,
+        containsAutoReply: true,
+        renderLargerThumbnail: true
+      }
+    }
+  }, { quoted: m });
+};
 
-handler.help = ['menu']
-handler.tags = ['main']
-handler.command = ['menu', 'menú', 'help']
+handler.help = ['menu'];
+handler.tags = ['main'];
+handler.command = ['menu', 'menú', 'help'];
 
-export default handler
+export default handler;

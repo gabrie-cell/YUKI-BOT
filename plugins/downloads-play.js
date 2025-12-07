@@ -64,18 +64,28 @@ const apis = [
 return await fetchFromApis(apis)
 }
 async function fetchFromApis(apis) {
-for (const { api, endpoint, extractor } of apis) {
-try {
-const controller = new AbortController()
-const timeout = setTimeout(() => controller.abort(), 10000)
-const res = await fetch(endpoint, { signal: controller.signal }).then(r => r.json())
-clearTimeout(timeout)
-const link = extractor(res)
-if (link) return { url: link, api }
-} catch (e) {}
-await new Promise(resolve => setTimeout(resolve, 500))
-}
-return null
+  const promises = apis.map(async ({ api, endpoint, extractor }) => {
+    try {
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort(), 10000)
+      const res = await fetch(endpoint, { signal: controller.signal })
+      clearTimeout(timeout)
+      if (!res.ok) throw new Error(`API request failed with status ${res.status}`)
+      const json = await res.json()
+      const link = extractor(json)
+      if (link) return { url: link, api }
+      else throw new Error('Invalid or empty link extracted')
+    } catch (e) {
+      throw new Error(`Failed to fetch from ${api}: ${e.message}`)
+    }
+  })
+
+  try {
+    return await Promise.any(promises)
+  } catch (e) {
+    console.error("All APIs failed:", e)
+    return null
+  }
 }
 function formatViews(views) {
 if (views === undefined) return "No disponible"
