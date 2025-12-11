@@ -45,12 +45,14 @@ case 'jadibot': case 'serbot': {
 const value = text ? text.trim().toLowerCase() : ''
 const type = /jadibot|serbot/.test(command) ? 'jadibotmd' : null
 if (!type) return m.reply(`ꕥ Modo no reconocido.`)
-const isEnable = bot[type] || false
+const settings = global.db.data.settings[conn.user.jid] || {}
+const isEnable = settings[type] || false
 const enable = value === 'enable' || value === 'on'
 const disable = value === 'disable' || value === 'off'
 if (enable || disable) {
 if (isEnable === enable) return m.reply(`ꕥ El modo *${type}* ya estaba ${enable ? 'activado' : 'desactivado'}.`)
-bot[type] = enable
+settings[type] = enable
+global.db.data.settings[conn.user.jid] = settings
 return conn.reply(m.chat, `❀ Has *${enable ? 'activado' : 'desactivado'}* el modo *${type}* para el Socket.`, m)
 }
 conn.reply(m.chat, `「✦」Puedes activar o desactivar el modo *${type}* utilizando:\n\n● Activar » ${usedPrefix}${command} enable\n● Desactivar » ${usedPrefix}${command} disable\n\nꕥ Estado actual » *${isEnable ? '✓ Activado' : '✗ Desactivado'}*`, m)

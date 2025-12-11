@@ -80,7 +80,7 @@ export async function billieJadiBot(options) {
     const id = path.basename(pathBillieJadiBot);
     const jid = `${id}@s.whatsapp.net`;
 
-    const mcode = args.includes('--code') || args.includes('code');
+    const mcode = command === 'code' || args.includes('--code') || args.includes('code');
     let pairingCode = null;
     let qrTimeout = null;
     let sentMsg = null;
