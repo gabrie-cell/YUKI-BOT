@@ -12,7 +12,7 @@ let txt = `
 ⋆｡ﾟ☁︎｡⋆｡ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦  ⋆｡ﾟ☁︎｡⋆｡
 ✦━━━━━━༺♡༻━━━━━━✦
 
-```✦ Hola @${userId.split('@')[0]}, soy ${botname}```
+✦ Hola @${userId.split('@')[0]}, soy ${botname}
 
 • Tipo: ${(conn.user.jid == global.conn.user.jid ? 'Principal' : 'Sub-Bot')}
 • Usuarios: ${totalreg.toLocaleString()}
