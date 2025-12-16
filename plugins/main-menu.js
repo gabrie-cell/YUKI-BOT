@@ -2,12 +2,6 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args }) => {
-let settings = global.db.data.settings[conn.user.jid] || {}
-let botname = settings.botname || global.botname
-let icono = settings.icono || global.icono
-let banner = settings.banner || global.banner
-let video = global.video
-
 let mentionedJid = await m.mentionedJid
 let userId = mentionedJid && mentionedJid[0] ? mentionedJid[0] : m.sender
 let totalreg = Object.keys(global.db.data.users).length
@@ -265,9 +259,10 @@ let txt = `
 > BY ABRAHAN-M
 `.trim()
 
+let settings = global.db.data.settings[conn.user.jid]
 if (settings.menutype === 'video') {
     await conn.sendMessage(m.chat, {
-        video: { url: video },
+        video: { url: global.video },
         caption: txt,
         gifPlayback: true,
         contextInfo: {
@@ -275,7 +270,7 @@ if (settings.menutype === 'video') {
             externalAdReply: {
                 title: botname,
                 body: textbot,
-                thumbnail: await(await fetch(icono)).buffer(),
+                thumbnail: await(await fetch(global.icono)).buffer(),
                 sourceUrl: global.github,
                 mediaUrl: global.github,
                 mediaType: 1,
@@ -293,7 +288,7 @@ if (settings.menutype === 'video') {
             forwardedNewsletterMessageInfo: {
                 newsletterJid: global.channel,
                 serverMessageId: '',
-                newsletterName: botname
+                newsletterName: global.botname
             },
             externalAdReply: {
                 title: botname,
@@ -301,7 +296,7 @@ if (settings.menutype === 'video') {
                 mediaType: 1,
                 mediaUrl: global.github,
                 sourceUrl: global.github,
-                thumbnail: await (await fetch(banner)).buffer(),
+                thumbnail: await (await fetch(global.banner)).buffer(),
                 showAdAttribution: false,
                 containsAutoReply: true,
                 renderLargerThumbnail: true
