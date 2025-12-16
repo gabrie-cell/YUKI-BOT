@@ -187,10 +187,18 @@ fs.rmdirSync(pathYukiJadiBot, { recursive: true })
 if (global.db.data == null) loadDatabase()
 if (connection == `open`) {
 if (!global.db.data?.users) loadDatabase()
-await joinChannels(conn)
+await joinChannels(sock)
 let userName, userJid 
 userName = sock.authState.creds.me.name || 'Anónimo'
 userJid = sock.authState.creds.me.jid || `${path.basename(pathYukiJadiBot)}@s.whatsapp.net`
+if (global.db.data.settings[userJid] === undefined) {
+  global.db.data.settings[userJid] = {
+    botname: global.botname,
+    banner: global.banner,
+    icono: global.icono,
+    video: global.video,
+  }
+}
 console.log(chalk.bold.cyanBright(`\n❒⸺⸺⸺⸺【• SUB-BOT •】⸺⸺⸺⸺❒\n│\n│ ❍ ${userName} (+${path.basename(pathYukiJadiBot)}) conectado exitosamente.\n│\n❒⸺⸺⸺【• CONECTADO •】⸺⸺⸺❒`))
 sock.isInit = true
 global.conns.push(sock)

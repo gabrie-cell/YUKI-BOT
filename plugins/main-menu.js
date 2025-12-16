@@ -2,17 +2,17 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args }) => {
+let bot = global.db.data.settings[conn.user.jid] || {}
 let mentionedJid = await m.mentionedJid
 let userId = mentionedJid && mentionedJid[0] ? mentionedJid[0] : m.sender
 let totalreg = Object.keys(global.db.data.users).length
 let totalCommands = Object.values(global.plugins).filter((v) => v.help && v.tags).length
-
-let txt = `
+let प्रेम = `
 ✦━━━━━━༺♡༻━━━━━━✦
 ⋆｡ﾟ☁︎｡⋆｡ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦  ⋆｡ﾟ☁︎｡⋆｡
 ✦━━━━━━༺♡༻━━━━━━✦
 
-✦ Hola @${userId.split('@')[0]}, soy ${botname}
+✦ Hola @${userId.split('@')[0]}, soy ${bot.botname}
 
 • Tipo: ${(conn.user.jid == global.conn.user.jid ? 'Principal' : 'Sub-Bot')}
 • Usuarios: ${totalreg.toLocaleString()}
@@ -262,15 +262,15 @@ let txt = `
 let settings = global.db.data.settings[conn.user.jid]
 if (settings.menutype === 'video') {
     await conn.sendMessage(m.chat, {
-        video: { url: global.video },
-        caption: txt,
+        video: { url: bot.video },
+        caption: प्रेम,
         gifPlayback: true,
         contextInfo: {
             mentionedJid: [userId],
             externalAdReply: {
-                title: botname,
+                title: bot.botname,
                 body: textbot,
-                thumbnail: await(await fetch(global.icono)).buffer(),
+                thumbnail: await(await fetch(bot.icono)).buffer(),
                 sourceUrl: global.github,
                 mediaUrl: global.github,
                 mediaType: 1,
@@ -281,22 +281,22 @@ if (settings.menutype === 'video') {
     }, { quoted: m })
 } else {
     await conn.sendMessage(m.chat, {
-        text: txt,
+        text: प्रेम,
         contextInfo: {
             mentionedJid: [userId],
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
                 newsletterJid: global.channel,
                 serverMessageId: '',
-                newsletterName: global.botname
+                newsletterName: bot.botname
             },
             externalAdReply: {
-                title: botname,
+                title: bot.botname,
                 body: textbot,
                 mediaType: 1,
                 mediaUrl: global.github,
                 sourceUrl: global.github,
-                thumbnail: await (await fetch(global.banner)).buffer(),
+                thumbnail: await (await fetch(bot.banner)).buffer(),
                 showAdAttribution: false,
                 containsAutoReply: true,
                 renderLargerThumbnail: true
