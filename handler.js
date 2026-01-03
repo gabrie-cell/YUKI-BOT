@@ -94,6 +94,8 @@ export async function handler(chatUpdate) {
 
     if (!plugin) return
 
+    const fail = plugin.fail || global.dfail
+
     // Full DB initialization
     try {
       user = global.db.data.users[m.sender]
