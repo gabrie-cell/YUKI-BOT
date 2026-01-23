@@ -1,127 +1,78 @@
-<h1 align="center">BILLIE BOT</h1>
 
-<img src= "https://qu.ax/dDQdO.jpg">
+# ⚽ ISAGI YOICHI ⚽
+
+<p align="center">
+  <img src="https://files.catbox.moe/y8iiar.jpg" alt="IsagiBot MD Logo" width="600"/>
 </p>
 
-### *`❕️ importante`*
-Este proyecto **no está afiliado de ninguna manera** con `WhatsApp`, `Inc. WhatsApp` es una marca registrada de `WhatsApp LLC`, y este bot es un **desarrollo independiente** que **no tiene ninguna relación oficial con la compañía**.
+<p align="center">
+  <a href="https://github.com/jonathanggg">
+    <img src="http://readme-typing-svg.herokuapp.com?color=6A0DAD&size=26&center=true&vCenter=true&width=500&lines=✨+Isagi+Bot+MD;⚡+Powered+by+gabriel+owner;🌟+Deja+Tu+Estrella+En+El+Repo" alt="Header Typing SVG">
+  </a>
+</p>
 
-<details>
-<summary><b>Descripción</b></summary>
-
-un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofrece una variedad de características para mejorar tu experiencia en WhatsApp.
-
-#### Características
-Configuración avanzada de grupos 
-Bienvenidas personalizadas  
-Herramientas útiles  
-Juegos RPG (Gacha y Economía)  
-Funciones de Inteligencia Artificial  
-Descargas y búsquedas multi-plataforma  
-Sub-Bots (JadiBot)  
-Extensiones adicionales
-</details>
+> **🚀 Creado por gabriel and isagi y yoichi| 🔥 Deja tu estrellita en el repositorio  | 💜 Cuidate**
 
 ---
 
-### **`✧ Click en la imagen para descargar termux ✧`**
-<a
-href="https://www.mediafire.com/file/wkinzgpb0tdx5qh/com.termux_1022.apk/file"><img src="https://qu.ax/finc.jpg" height="125px"></a> 
+# <p align="center"><img src="https://files.catbox.moe/pkwyo4.jpg" width="400" height="400" alt="ISAGI"/></p>
 
-### **`➮ Instalación por termux`**
-<details>
-<summary><b>✰ Instalación Manual</b></summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" style="width: 100%;">
+</p>
 
-> *Comandos para instalar de forma manual*
-```bash
-termux-setup-storage
-```
-```bash
-apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
-```
-```bash
-git clone https://github.com/The-King-Destroy/YukiBot-MD && cd YukiBot-MD
-```
-```bash
-yarn install
-```
-```bash
-npm install
-```
-```bash
-npm start
-```
-> *Si aparece **(Y/I/N/O/D/Z) [default=N] ?** use la letra **"y"** y luego **"ENTER"** para continuar con la instalación.*
-</details>
+<div align="center">
 
-<details>
-  <summary><b>🜸 Comandos para mantener más tiempo activo el Bot</b></summary>
-
-> *Ejecutar estos comandos dentro de la carpeta YukiBot-MD*
-```bash
-termux-wake-lock && npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs 
-``` 
-#### Opciones Disponibles
-> *Esto eliminará todo el historial que hayas establecido con PM2:*
-```bash 
-pm2 delete index
-``` 
-> *Si tienes cerrado Termux y quiere ver de nuevo la ejecución use:*
-```bash 
-pm2 logs 
-``` 
-> *Si desea detener la ejecución de Termux use:*
-```bash 
-pm2 stop index
-``` 
-> *Si desea iniciar de nuevo la ejecución de Termux use:*
-```bash 
-pm2 start index
 ```
----- 
-### En caso de detenerse
-> _Si despues que ya instalastes el bot y termux te salta en blanco, se fue tu internet o reiniciaste tu celular, solo realizaras estos pasos:_
-```bash
-cd && cd YukiBot-MD && npm start
+██╗    ██╗   ███████╗██╗      ██████╗     ██████╗    ███╗   ███╗      ███████╗
+██║    ██║   ██╔════╝██║     ██╔════╝    ██╔═══██╗  ████╗ ████     ║██╔════╝
+██║ █╗ ██║  █████╗   ██║     ██║            ██║   ██║    ██╔████╔██    ║█████╗  
+██║███╗██  ║██╔══╝  ██║     ██║            ██║   ██║    ██║╚██╔╝██    ║██╔══╝  
+╚███╔███╔╝ ███████╗███████╗╚██████╗╚██████╔╝   ██║ ╚═╝ ██     ║███████╗
+ ╚══╝╚══╝  ╚══════╝╚══════╝ ╚═════╝  ╚═════╝      ╚═╝     ╚═╝     ╚══════╝
 ```
-----
-### Obtener nuevo código QR 
-> *Detén el bot, haz click en el símbolo (ctrl) [default=z] usar la letra "z" + "ENTER" hasta que salga algo verdes similar a: `YukiBot-MD $`*
-> **Escribe los siguientes comandos uno x uno :**
-```bash 
-cd && cd YukiBot-MD && rm -rf sessions/Principal && npm run qr
+</div>
+
+<div align="center">
+
+   ❤️   
+  ❤️❤️  
+ ❤️❤️❤️ 
+❤️❤️❤️❤️
+ ❤️❤️❤️ 
+  ❤️❤️  
+   ❤️   
+
+</div>
+
+### `—◉ CANALES OFICIALES`
+
+<a href="https://whatsapp.com/channel/0029Vb6nOKBD8SDp0aFtCD3R" target="blank"><img src="https://img.shields.io/badge/CANAL_UPDATES_ISAGI-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+
+<a href="https://chat.whatsapp.com/C2nmGWWgzZx8JLVneEyywO?mode=hqrt2" target="blank"><img src="https://img.shields.io/badge/GRUPO_DEL_BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+
+### `—◉ DESARROLLADORES`
+
+
+<a href="https://wa.me/51941658192" target="blank"><img src="https://img.shields.io/badge/Gabriel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+
+
+
+<p align="center">
+<vid src="https://files.catbox.moe/lux4g2.mp4" alt="gif" width="400"/>
+</p>
+
+<div align="center">
+
 ```
-----
-### Obtener nuevo código de teléfono 
-```bash 
-cd && cd YukiBot-MD && rm -rf sessions/Principal && npm run code
+╭━━━━━━━━━━━━╮
+┃   ⚽ISAGI BOT ⚽     ┃
+╰━━━━━━━━━━━━╯
 ```
-</details>
+</div>
 
-<details>
-<summary><b>❀ Actualizar YukiBot-MD</b></summary>
-
-> **Utiliza esta opción únicamente si deseas actualizar a la última versión de YukiBot. Hemos implementado un método ingenioso mediante comandos para realizar la actualización, pero ten en cuenta que al usarla se eliminarán todos los archivos de la versión actual y se reemplazarán con los de la nueva versión. Solo se conservará la base de datos, por lo que será necesario volver a vincular el Bot.**  
-
-**Comandos para actualizar YukiBot-MD de forma automática**
-
-```bash
-grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/DevAlexJs/SakuraBot-MD/master/termux.sh | bash 
-```
-**✰ Volverte owner del Bot**
-
-*Si después de instalar el bot e iniciar la sesión (deseas poner tu número es la lista de owner pon este comando:*
-
-```bash
-cd && cd YukiBot-MD && nano settings.js
-```
-#### Para que no pierda su progreso en YukiBot, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
-> *Estos comandos solo funcionan para TERMUX, REPLIT, LINUX*
-</details>
-
----
-
-### **`ᥫ᭡ Propietario`**
-<a
-href="https://github.com/Abrahan987"><img src="https://github.com/Abrahan987.png" width="130" height="130" alt="
-ABRAHAN-M"/></a>
+<p align="center">
+<img src="https://files.catbox.moe/dqumh5.jpg" width="400" height="400" alt="Gabriel"/>
+<br>
+<strong>Gabriel😼</strong>
+</p>
