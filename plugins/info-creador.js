@@ -1,7 +1,7 @@
 let handler = async (m, { conn }) => {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
-FN:𝘋𝘦𝘷-Dani
+FN:𝘋𝘦𝘷-gabrie-ux
 ORG:𝘋𝘦𝘷-Dani
 TITLE:Epictetus, Enchiridion — Chapter 1 (verse 1)
 EMAIL;type=INTERNET:doxeosjr@gmail.com 
@@ -9,7 +9,7 @@ TEL;type=CELL;waid=51941658192:+51941658192
 ADR;type=WORK:;;2-chōme-7-5 Fuchūchō;Izumi;Osaka;594-0071;Japan
 URL;type=WORK:https://www.instagram.com/DV G Dx
 X-WA-BIZ-NAME:I S A G I - Ｂｏｔ
-X-WA-BIZ-DESCRIPTION:🄲 𝘗𝘰𝘸𝘦𝘳𝘦𝘥 𝘣𝘺 𝘋𝘦𝘷-Dani
+X-WA-BIZ-DESCRIPTION:🄲 𝘗𝘰𝘸𝘦𝘳𝘦𝘥 𝘣𝘺 𝘋𝘦𝘷-gabrie-ux
 X-WA-BIZ-HOURS:Mo-Su 00:00-23:59
 END:VCARD`;
 
@@ -36,9 +36,9 @@ END:VCARD`;
             },
             contextInfo: {
                 externalAdReply: {
-                    title: "© 2025–2025 yoichi Project",
+                    title: "© 2025–2026 YUKI Project",
                     body: "Contacta con el owner del bot.",
-                    thumbnailUrl: "https://files.catbox.moe/6orur7.jpg",
+                    thumbnailUrl: "https://files.catbox.moe/khwlby.jpg",
                     mediaType: 1,
                     renderLargerThumbnail: true,
                 },
