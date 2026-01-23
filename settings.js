@@ -25,10 +25,10 @@ global.yukiJadibts = true
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.botname = "sᴜᴋᴜɴᴀ ʙᴏᴛ ᴠ2 ༒︎"
-global.textbot = "sᴜᴋᴜɴᴀ, mᥲძᥱ ᥕі𝗍һ ᑲᥡ ᴀʙʀᴀʜᴀɴ-ᴍ"
-global.dev = "© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ᴀʙʀᴀʜᴀɴ-ᴍ 𒆜"
-global.author = "© mᥲძᥱ ᥕі𝗍һ ᑲᥡ ᴀʙʀᴀʜᴀɴ-ᴍ 𒆜"
+global.botname = "YUKI BOT ᴠ2 ༒︎"
+global.textbot = "YUKI, mᥲძᥱ ᥕі𝗍һ ᑲᥡ pedilo-ux"
+global.dev = "© ⍴᥆ᥕᥱrᥱძ ᑲᥡ pedofilo-ux 𒆜"
+global.author = "© mᥲძᥱ ᥕі𝗍һ ᑲᥡ pedofilo-ux 𒆜"
 global.etiqueta = "ᴀʙʀᴀʜᴀɴ-ᴍ"
 global.currency = "ᴅᴏʟᴀʀᴇs"
 global.banner = "https://i.ibb.co/ZRdwFv5R/IMG-20251214-WA0538-1.jpg"
