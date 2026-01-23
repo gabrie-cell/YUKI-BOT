@@ -26,13 +26,13 @@ global.yukiJadibts = true
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.botname = "YUKI BOT ᴠ2 ༒︎"
-global.textbot = "YUKI, mᥲძᥱ ᥕі𝗍һ ᑲᥡ pedilo-ux"
-global.dev = "© ⍴᥆ᥕᥱrᥱძ ᑲᥡ pedofilo-ux 𒆜"
-global.author = "© mᥲძᥱ ᥕі𝗍һ ᑲᥡ pedofilo-ux 𒆜"
+global.textbot = "YUKI, mᥲძᥱ ᥕі𝗍һ ᑲᥡ gabrie-ux"
+global.dev = "© ⍴᥆ᥕᥱrᥱძ ᑲᥡ gabrie-ux 𒆜"
+global.author = "© mᥲძᥱ ᥕі𝗍һ ᑲᥡ gabrie-ux 𒆜"
 global.etiqueta = "Gabriel-ᴍ"
 global.currency = "ᴅᴏʟᴀʀᴇs"
 global.banner = "https://i.ibb.co/ZRdwFv5R/IMG-20251214-WA0538-1.jpg"
-global.icono = "https://files.catbox.moe/eppyug.jpg"
+global.icono = "https://files.catbox.moe/lbu8ts.jpg"
 global.video = "https://files.catbox.moe/gfmlh4.mp4"
 global.catalogo = fs.readFileSync('./lib/catalogo.jpg')
 
