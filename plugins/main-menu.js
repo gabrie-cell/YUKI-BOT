@@ -63,7 +63,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
   const infoUser = `
 > ☃️ _¡Hola!_ *🥀¡Muy buenos días🌅, tardes🌇 o noches🌆!*
 
-> 🎳 \`itachi:\` sistema automatizado para interactuar con comandos y descargar, buscar y jugar dentro del chat.
+> 🎳 \`Yuki:\` sistema automatizado para interactuar con comandos y descargar, buscar y jugar dentro del chat.
 
 ━━━━━━━━━━━━━
 > ᴜsᴜʀᴀɪᴏ ┆ ${nombre}
@@ -104,7 +104,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
   let header = '*– %category*'
   let body = '│  ◦ %cmd'
   let footer = '└––'
-  let after = `> bot itachi ┆ 𝖠𝗌𝗌𝗂𝗌𝗍𝖺𝗇𝗍`
+  let after = `> bot yuki ┆ 𝖠𝗌𝗌𝗂𝗌𝗍𝖺𝗇𝗍`
 
   let menu = []
   for (let tag in tags) {
