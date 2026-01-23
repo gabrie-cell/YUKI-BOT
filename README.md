@@ -1,5 +1,5 @@
 
-# ⚽ ISAGI YOICHI ⚽
+# 💐 YUKI V2  🌿
 
 <p align="center">
   <img src="https://files.catbox.moe/y8iiar.jpg" alt="IsagiBot MD Logo" width="600"/>
