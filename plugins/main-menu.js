@@ -91,7 +91,7 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
     'grupo': 'ᴍᴇɴᴜ ɢʀᴜᴘᴏ',
     'ai': 'ᴍᴇɴᴜ ᴀɪ',
     'game': 'ᴍᴇɴᴜ ɢᴀᴍᴇ',
-    'jadibot': 'ᴍᴇɴᴜ ᴊᴀᴅɪʙᴏᴛ',
+    'serbot': 'ᴍᴇɴᴜ ᴊᴀᴅɪʙᴏᴛ',
     'main': 'ᴍᴇɴᴜ ᴍᴀɪɴ',
     'search': 'ᴍᴇɴᴜ SEARCH',
     'nsfw': 'ᴍᴇɴᴜ ɴsғᴡ',
