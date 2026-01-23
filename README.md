@@ -15,7 +15,7 @@
 
 ---
 
-# <p align="center"><img src="https://files.catbox.moe/pkwyo4.jpg" width="400" height="400" alt="ISAGI"/></p>
+# <p align="center"><img src="https://files.catbox.moe/khwlby.jpg" width="400" height="400" alt="YUKI"/></p>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" style="width: 100%;">
@@ -66,7 +66,7 @@
 
 ```
 ╭━━━━━━━━━━━━╮
-┃   ⚽ISAGI BOT ⚽     ┃
+┃  💐YUKI BOT🌿    ┃
 ╰━━━━━━━━━━━━╯
 ```
 </div>
